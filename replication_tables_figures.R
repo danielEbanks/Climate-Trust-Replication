@@ -35,7 +35,7 @@ reg5 <- svyglm(formula = Q41_university ~ race_r + gender + educ_r + age_r + reg
 orderedlogit1a <- svyolr(formula = clim_impt_4 ~ univ_trust + race_r + gender + educ_r + age_r + region_r + relig_d + relig_a + environment_info + pol_info + pid  + ideo_r + tv_news + radio_news + print_news + online_news,design=national.design.climate.may2022)
 
 #LPM
-LinProb <- svyglm(formula = clim_humans ~ univ_trust + race_r + gender + educ_r + age_r + region_r + relig_d + relig_a + environment_info + pol_info + pid  + ideo_r + tv_news + radio_news + print_news + online_news, family=gaussian,design=national.design.climate.may2022)
+LinProb2 <- svyglm(formula = clim_humans ~ univ_trust + race_r + gender + educ_r + age_r + region_r + relig_d + relig_a + environment_info + pol_info + pid  + ideo_r + tv_news + radio_news + print_news + online_news, family=gaussian,design=national.design.climate.may2022)
 
 
 
@@ -105,7 +105,7 @@ dev.off()
 
 print("Fig SI 5")
 pdf("trust-linprob2-ame.pdf")
-plot_summs(LinProb2a, coefs=c("Trust: Low" = "univ_trustLow Trust", "Trust: Moderate" = "univ_trustMod Trust", "Race: Black" = "race_rBlack", "Race: Hisp/Latino" = "race_rHispanic", "Race: Other" = "race_rOther", "Gender: Woman" = "genderWoman", "Ed: College" = "educ_rCollGrad", "Ed: PostGrad" = "educ_rPostGrad", "Ed: SomeCall" = "educ_rSomeColl", "Age: 30-44" = "age_rb_30t44", "Age: 45-64" = "age_rc_45t64", "Age: 65+" = "age_rd_65Older", "Midwest" = "region_rMidwest", "Northeast" = "region_rNortheast", "West" = "region_rWest", "Rel: Catholic" = "relig_dCatholic", "Rel: Jewish" = "relig_dJewish", "Rel: None" = "relig_dNone", "Rel: Other" = "relig_dOther", "Attend: Frequent" = "relig_aFrequently", "Attend: Often" = "relig_aOften", "Attend: Sometimes" = "relig_aSometimes", "Environment Info." = "environment_info", "Political Info." = "pol_info", "Democrat" = "pidb_Democrat", "Independ." = "pidc_Independent", "Moderate" = "ideo_rb_Moderate", "Liberal" = "ideo_rc_Liberal", "News: TV" = "tv_news", "News: Radio" = "radio_news", "News: Print" = "print_news", "News: Online" = "online_news"), scale = TRUE) + xlim(-.5, .5)
+plot_summs(LinProb2, coefs=c("Trust: Low" = "univ_trustLow Trust", "Trust: Moderate" = "univ_trustMod Trust", "Race: Black" = "race_rBlack", "Race: Hisp/Latino" = "race_rHispanic", "Race: Other" = "race_rOther", "Gender: Woman" = "genderWoman", "Ed: College" = "educ_rCollGrad", "Ed: PostGrad" = "educ_rPostGrad", "Ed: SomeCall" = "educ_rSomeColl", "Age: 30-44" = "age_rb_30t44", "Age: 45-64" = "age_rc_45t64", "Age: 65+" = "age_rd_65Older", "Midwest" = "region_rMidwest", "Northeast" = "region_rNortheast", "West" = "region_rWest", "Rel: Catholic" = "relig_dCatholic", "Rel: Jewish" = "relig_dJewish", "Rel: None" = "relig_dNone", "Rel: Other" = "relig_dOther", "Attend: Frequent" = "relig_aFrequently", "Attend: Often" = "relig_aOften", "Attend: Sometimes" = "relig_aSometimes", "Environment Info." = "environment_info", "Political Info." = "pol_info", "Democrat" = "pidb_Democrat", "Independ." = "pidc_Independent", "Moderate" = "ideo_rb_Moderate", "Liberal" = "ideo_rc_Liberal", "News: TV" = "tv_news", "News: Radio" = "radio_news", "News: Print" = "print_news", "News: Online" = "online_news"), scale = TRUE) + xlim(-.5, .5)
 dev.off()
 
 
