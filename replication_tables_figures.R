@@ -109,10 +109,18 @@ plot_summs(LinProb2, coefs=c("Trust: Low" = "univ_trustLow Trust", "Trust: Moder
 dev.off()
 
 
-## SI Table descriptive statistics ###########################################
+## SI Table descriptive statistics/Fig 1 ###########################################
 
-t1 <- round(prop.table(svytable(~Q41_university, national.design.climate.may2022)),3)
+
+# Fig 1: Panel A
+t1   <- round(prop.table(svytable(~Q41_university, national.design.climate.may2022)),3)
+t1.5 <- round(prop.table(svytable(~univ_trust, national.design.climate.may2022)),3)
+
+# Fig 1: Panel B
 t2 <- round(prop.table(svytable(~clim_impt, national.design.climate.may2022)),3)
+t2.5 <- round(prop.table(svytable(~clim_impt_4, national.design.climate.may2022)),3)
+
+# Fig 1: Panel C
 t3 <- round(prop.table(svytable(~clim_humans, national.design.climate.may2022)),3)
 t4 <- round(prop.table(svytable(~race_r, national.design.climate.may2022)),3)
 t5 <- round(prop.table(svytable(~gender, national.design.climate.may2022)),3)
